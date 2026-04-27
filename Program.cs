@@ -2,6 +2,8 @@
 #region Q1
 //Q1: What will this print and explain what happens?
 
+using System.Numerics;
+
 double d = 9.99;
 int x = (int)d;
 Console.WriteLine(x);
@@ -35,3 +37,11 @@ Console.WriteLine(x);
 */
 //this code will not be run because the string cannot be converted or cast to an integer
 #endregion
+//Q5: Complete the code from the previous question so it prints
+//Invalid if conversion into int fails, otherwise prints the number
+string s = "12a";
+if (int.TryParse(s, out x))
+
+    Console.WriteLine(x);
+else
+Console.WriteLine("Invalid input");
