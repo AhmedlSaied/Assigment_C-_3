@@ -27,3 +27,11 @@ int age =int.Parse(Console.ReadLine());
 // This code will read a line of input from the user, parse it as an integer, and store it in the variable 'age'. If the user enters a valid integer, it will be assigned to 'age'.
 //If the input is not a valid integer, it will throw a FormatException.
 #endregion
+#region Q4
+//Q4: What happens here and why?
+/*string s = "12a";
+int x = int.Parse(s);
+Console.WriteLine(x);
+*/
+//this code will not be run because the string cannot be converted or cast to an integer
+#endregion
