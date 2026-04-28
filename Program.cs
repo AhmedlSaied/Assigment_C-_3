@@ -101,25 +101,27 @@ Console.WriteLine("Invalid input");
 #region Q12
 //Q12: What happens here and if there is a problem, handle it
 
-string? s = null;
-Console.WriteLine(s!.Length);
+//string? s = null;
+//Console.WriteLine(s!.Length);
 
-//this is an unsafe way becuse if the user enter an invalid input it will throw a null referance exception.
-//To handle this, we can check if s is null before trying to access its Length property. We can modify the code as follows:
+////this is an unsafe way becuse if the user enter an invalid input it will throw a null referance exception.
+////To handle this, we can check if s is null before trying to access its Length property. We can modify the code as follows:
+//#endregion
+//if (s != null)
+//{
+//    Console.WriteLine(s.Length);
+//}
+////OR
+
+//Console.WriteLine(s?.Length ?? 0);
 #endregion
-if (s != null)
-{
-    Console.WriteLine(s.Length);
-}
-//OR
-
-Console.WriteLine(s?.Length ?? 0);
-
 #region Q13
 //Q13: What will this print?
-//string? s = null;
-//int x = Convert.ToInt32(s);
-//Console.WriteLine(x);
+string? s = null;
+int x = Convert.ToInt32(s);
+Console.WriteLine(x);
+// This code will print "0" because the Convert.ToInt32 method returns 0 when the input string is null. It does not throw an exception in this case,
+//unlike int.Parse which would throw a FormatException if the input is null or not a valid integer.
 #endregion
 #region Q14
 //Q14: Compare results and explain each result :
