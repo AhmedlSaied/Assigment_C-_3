@@ -92,9 +92,48 @@ Console.WriteLine("Invalid input");
 #region q11
 //Q11: What’s wrong with this “safe” code and how can we solve it ?
 
+//string? s = null;
+//int x = int.Parse(s ?? "0");
+//Console.WriteLine(x);
+////in this code ,we shloud use tryparse instead of parse to avoid exceptions when the string is null or not a valid integer. We can modify the code as follows:
+//x=int.TryParse(s, out int result) ? result : 0;
+#endregion
+#region Q12
+//Q12: What happens here and if there is a problem, handle it
+
 string? s = null;
-int x = int.Parse(s ?? "0");
-Console.WriteLine(x);
-//in this code ,we shloud use tryparse instead of parse to avoid exceptions when the string is null or not a valid integer. We can modify the code as follows:
-x=int.TryParse(s, out int result) ? result : 0;
+Console.WriteLine(s!.Length);
+
+//this is an unsafe way becuse if the user enter an invalid input it will throw a null referance exception.
+//To handle this, we can check if s is null before trying to access its Length property. We can modify the code as follows:
+#endregion
+if (s != null)
+{
+    Console.WriteLine(s.Length);
+}
+//OR
+
+Console.WriteLine(s?.Length ?? 0);
+
+#region Q13
+//Q13: What will this print?
+//string? s = null;
+//int x = Convert.ToInt32(s);
+//Console.WriteLine(x);
+#endregion
+#region Q14
+//Q14: Compare results and explain each result :
+
+//string? s = null;
+// A
+// int a = int.Parse(s);
+// B
+//int b = Convert.ToInt32(s);
+//Console.WriteLine(b);
+#endregion
+#region Q15
+//Q15: Complete the line to print "Guest" when user is null,
+//otherwise print the user name in uppercase:
+
+string? user = null;
 #endregion
