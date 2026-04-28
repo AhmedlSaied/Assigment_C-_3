@@ -126,19 +126,19 @@ Console.WriteLine("Invalid input");
 #region Q14
 //Q14: Compare results and explain each result :
 
-string? s = null;
-//A
-int a = int.Parse(s);
-//A will throw a FormatException because int.Parse does not handle null values and expects a valid integer string.
-//When it encounters null, it cannot parse it and thus throws an exception.
-//B
-int b = Convert.ToInt32(s);
-Console.WriteLine(b);
-//B will print "0" because Convert.ToInt32 handles null values by returning 0 instead of throwing an exception.
+//string? s = null;
+////A
+//int a = int.Parse(s);
+////A will throw a FormatException because int.Parse does not handle null values and expects a valid integer string.
+////When it encounters null, it cannot parse it and thus throws an exception.
+////B
+//int b = Convert.ToInt32(s);
+//Console.WriteLine(b);
+////B will print "0" because Convert.ToInt32 handles null values by returning 0 instead of throwing an exception.
 #endregion
 #region Q15
 //Q15: Complete the line to print "Guest" when user is null,
 //otherwise print the user name in uppercase:
-
 string? user = null;
+Console.WriteLine(user?.ToUpper() ?? "Guest");
 #endregion
