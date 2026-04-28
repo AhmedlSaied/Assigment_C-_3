@@ -77,7 +77,15 @@ Console.WriteLine("Invalid input");
 #region Q9
 //Q9: What will this print and explain why ?
 
-string? name = null;
-Console.WriteLine(name?.Length);
+//string? name = null;
+//Console.WriteLine(name?.Length);
 //this code will print an empety line becuse it allow null values and there is nothing to calculate the lenth;
+#endregion
+#region Q10
+//Q10: What will this print and explain the process?
+
+string? name2 = null;
+int length = name2?.Length ?? 0;
+//this code will print 0 , becuse the null conditional operator is check if name2 is null ,and Null-Coalescing Operator is check if the result of name2?.Length is null,
+//if it is null it will return 0,herwise it will return the length of the string. In this case, since name2 is null, the length variable will be assigned the value 0.
 #endregion
