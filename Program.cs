@@ -3,6 +3,7 @@
 //Q1: What will this print and explain what happens?
 
 using System.Numerics;
+using System.Xml.Linq;
 
 //double d = 9.99;
 //int x = (int)d;
@@ -67,9 +68,16 @@ Console.WriteLine("Invalid input");
 #region Q8
 //Q8: Fix this to avoid exceptions and print -1 if conversion isn’t
 //possible?
-object o = 10;
-int? temp = o as int?;
-long x = temp ?? -1; 
+//object o = 10;
+//int? temp = o as int?;
+//long x = temp ?? -1; 
 
-Console.WriteLine(x);
+//Console.WriteLine(x);
+#endregion
+#region Q9
+//Q9: What will this print and explain why ?
+
+string? name = null;
+Console.WriteLine(name?.Length);
+//this code will print an empety line becuse it allow null values and there is nothing to calculate the lenth;
 #endregion
