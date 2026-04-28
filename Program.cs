@@ -117,21 +117,24 @@ Console.WriteLine("Invalid input");
 #endregion
 #region Q13
 //Q13: What will this print?
-string? s = null;
-int x = Convert.ToInt32(s);
-Console.WriteLine(x);
+//string? s = null;
+//int x = Convert.ToInt32(s);
+//Console.WriteLine(x);
 // This code will print "0" because the Convert.ToInt32 method returns 0 when the input string is null. It does not throw an exception in this case,
 //unlike int.Parse which would throw a FormatException if the input is null or not a valid integer.
 #endregion
 #region Q14
 //Q14: Compare results and explain each result :
 
-//string? s = null;
-// A
-// int a = int.Parse(s);
-// B
-//int b = Convert.ToInt32(s);
-//Console.WriteLine(b);
+string? s = null;
+//A
+int a = int.Parse(s);
+//A will throw a FormatException because int.Parse does not handle null values and expects a valid integer string.
+//When it encounters null, it cannot parse it and thus throws an exception.
+//B
+int b = Convert.ToInt32(s);
+Console.WriteLine(b);
+//B will print "0" because Convert.ToInt32 handles null values by returning 0 instead of throwing an exception.
 #endregion
 #region Q15
 //Q15: Complete the line to print "Guest" when user is null,
